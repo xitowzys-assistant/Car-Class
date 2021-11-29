@@ -22,7 +22,10 @@ Car::Car(std::string model,
 }
 
 void Car::runTransport() {
-    IstransportStart = true;
+    if (gasolineVolume <= 0)
+        throw CarException("Транспорт не заправлен!");
+    else
+        IstransportStart = true;
 }
 
 void Car::stopTransport() {
@@ -30,7 +33,7 @@ void Car::stopTransport() {
 }
 
 void Car::refuelTransport(float liters) {
-    if(liters < 0)
+    if (liters < 0)
         throw CarException("Объем не может быть отрицательным!");
 
     gasolineVolume = liters;
@@ -50,9 +53,9 @@ void Car::printStatusTransport() const {
     using namespace std;
 
     if (IstransportStart)
-        cout << "Транспорт заведен"<< "\n";
+        cout << "Транспорт заведен" << "\n";
     else
-        cout << "Транспорт заглушен"<< "\n";
+        cout << "Транспорт заглушен" << "\n";
 
     cout << "Объем бензина: " << gasolineVolume << "\n";
 
