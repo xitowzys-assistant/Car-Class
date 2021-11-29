@@ -22,6 +22,7 @@ int main() {
                        2015);
 
     toyota.printSpecifications();
+    std::cout << "----------------------------------------\n";
     hino.printSpecifications();
     return 0;
 }

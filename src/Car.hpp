@@ -37,7 +37,7 @@ protected:
         unsigned short yearRelease);
 public:
 
-    std::string printSpecifications();
+    void printSpecifications();
 
     // Завести автомобиль
     void runTransport();

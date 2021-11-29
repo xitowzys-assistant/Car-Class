@@ -33,7 +33,12 @@ void Car::refuelTransport(float liters) {
 
 }
 
-std::string Car::printSpecifications() {
-    std::cout << "Модель: " << model << "\nЦвет: " << color << "\nДвигатель: " << engine << "\n";
-    return std::string();
+void Car::printSpecifications() {
+    using namespace std;
+
+    cout << "Модель: " << model << "\n";
+    cout << "Цвет: " << color << "\n";
+    cout << "Двигатель: " << engine << "\n";
+    cout << "Мощность: " << power << "\n";
+    cout << "Год выпуска: " << yearRelease << "\n";
 }
