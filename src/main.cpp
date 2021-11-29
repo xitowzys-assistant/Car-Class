@@ -24,6 +24,31 @@ int main() {
     toyota.printSpecifications();
     std::cout << "----------------------------------------\n";
     hino.printSpecifications();
+
+    std::cout << "########################################\n";
+
+    toyota.runTransport();
+    toyota.printStatusTransport();
+    std::cout << "----------------------------------------\n";
+    hino.printStatusTransport();
+    std::cout << "----------------------------------------\n";
+    toyota.stopTransport();
+
+    // Проверка на отрицательное число
+    try {
+        toyota.refuelTransport(3);
+    }
+    catch (CarException &ex){
+        std::cout << ex.what();
+        return 1;
+    }
+
+
+    toyota.printStatusTransport();
+
+    std::cout << "########################################\n";
+
+
     return 0;
 }
 

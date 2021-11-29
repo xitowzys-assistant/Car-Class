@@ -9,9 +9,13 @@
 #define Car_hpp
 
 #include <iostream>
+#include "CarException.h"
 
 class Car {
 private:
+
+    // Заведен транспорт?
+    bool IstransportStart = false;
 
     // Модель автомобиля
     std::string model;
@@ -37,7 +41,7 @@ protected:
         unsigned short yearRelease);
 public:
 
-    void printSpecifications();
+    void printSpecifications() const;
 
     // Завести автомобиль
     void runTransport();
@@ -47,6 +51,8 @@ public:
 
     // Заправить автомобиль
     void refuelTransport(float liters);
+
+    void printStatusTransport() const;
 
 };
 

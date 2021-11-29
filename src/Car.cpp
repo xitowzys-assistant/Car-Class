@@ -22,18 +22,21 @@ Car::Car(std::string model,
 }
 
 void Car::runTransport() {
-
+    IstransportStart = true;
 }
 
 void Car::stopTransport() {
-
+    IstransportStart = false;
 }
 
 void Car::refuelTransport(float liters) {
+    if(liters < 0)
+        throw CarException("Объем не может быть отрицательным!");
 
+    gasolineVolume = liters;
 }
 
-void Car::printSpecifications() {
+void Car::printSpecifications() const {
     using namespace std;
 
     cout << "Модель: " << model << "\n";
@@ -41,4 +44,16 @@ void Car::printSpecifications() {
     cout << "Двигатель: " << engine << "\n";
     cout << "Мощность: " << power << "\n";
     cout << "Год выпуска: " << yearRelease << "\n";
+}
+
+void Car::printStatusTransport() const {
+    using namespace std;
+
+    if (IstransportStart)
+        cout << "Транспорт заведен"<< "\n";
+    else
+        cout << "Транспорт заглушен"<< "\n";
+
+    cout << "Объем бензина: " << gasolineVolume << "\n";
+
 }
