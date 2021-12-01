@@ -9,6 +9,7 @@
 #define Truck_hpp
 
 #include "Car.hpp"
+#include "CarException.h"
 
 class Truck : public Car {
 private:
@@ -42,11 +43,22 @@ public:
     // Верунуть опоры
     void returnSupports();
 
+    // Напечатать состояние грузовика
+    void printStatusTransport() const override;
+
+    // Напечатать характеристики грузовика
+    void printSpecifications() const override;
+
     Truck(std::string model,
           std::string color,
           std::string engine,
           unsigned int power,
-          unsigned short yearRelease);
+          unsigned short yearRelease,
+          unsigned int loadCapacity,
+          unsigned int bodyVolume,
+          bool sleepingBag,
+          bool preservation,
+          bool retractableLegs);
 };
 
 #endif /* Truck_hpp */

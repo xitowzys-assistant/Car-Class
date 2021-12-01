@@ -39,9 +39,11 @@ protected:
         std::string engine,
         unsigned int power,
         unsigned short yearRelease);
+
 public:
 
-    void printSpecifications() const;
+    // Напечатать характеристики транспорта
+    virtual void printSpecifications() const;
 
     // Завести автомобиль
     void runTransport();
@@ -52,7 +54,8 @@ public:
     // Заправить автомобиль
     void refuelTransport(float liters);
 
-    void printStatusTransport() const;
+    // Напечатать состояние транспорта
+    virtual void printStatusTransport() const;
 
 };
 
