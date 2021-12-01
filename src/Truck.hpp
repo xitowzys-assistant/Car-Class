@@ -28,6 +28,12 @@ private:
 
     // Выдвижные секции ног
     bool retractableLegs = false;
+
+    // Состояние кузова
+    bool statusBody = false;
+
+    // Состояние опор
+    bool statusSupports = false;
 public:
     // Поднять кузов
     void liftBody();

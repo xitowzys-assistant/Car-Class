@@ -41,19 +41,25 @@ Truck::Truck(std::string model,
 }
 
 void Truck::liftBody() {
-
+    this->statusBody = true;
 }
 
 void Truck::lowerBody() {
-
+    this->statusBody = false;
 }
 
 void Truck::extendSupports() {
-
+    if (retractableLegs)
+        this->statusSupports = true;
+    else
+        throw CarException("Опоры отсутствуют!!!");
 }
 
 void Truck::returnSupports() {
-
+    if (retractableLegs)
+        this->statusSupports = false;
+    else
+        throw CarException("Опоры отсутствуют!!!");
 }
 
 void Truck::printStatusTransport() const {
@@ -61,6 +67,15 @@ void Truck::printStatusTransport() const {
 
     Car::printStatusTransport();
 
+    if (statusBody)
+        cout << "Кузов поднят\n";
+    else
+        cout << "Кузов не поднят\n";
+
+    if (statusSupports && retractableLegs)
+        cout << "Опоры выдвинуты\n";
+    else if (!statusSupports && retractableLegs)
+        cout << "Опоры не выдвинуты\n";
 }
 
 void Truck::printSpecifications() const {
@@ -72,9 +87,9 @@ void Truck::printSpecifications() const {
     cout << "Объем кузова: " << bodyVolume << "\n";
 
     if (sleepingBag)
-        cout << "Спатьник есть\n";
+        cout << "Спальник есть\n";
     else
-        cout << "Спатьника нету\n";
+        cout << "Спальника нету\n";
 
     if (preservation)
         cout << "Присутствует консервация\n";

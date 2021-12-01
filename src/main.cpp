@@ -45,6 +45,7 @@ int main() {
     toyota.runTransport();
     toyota.printStatusTransport();
     std::cout << "----------------------------------------\n";
+    hino.extendSupports();
     hino.printStatusTransport();
     std::cout << "----------------------------------------\n";
     toyota.stopTransport();
