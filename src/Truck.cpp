@@ -101,3 +101,9 @@ void Truck::printSpecifications() const {
     else
         cout << "Выдвижных секции ног нету\n";
 }
+
+Truck::~Truck() {
+    using namespace std;
+
+    cout << "Сработал деструктор класса грузовик\n";
+}

@@ -56,3 +56,9 @@ void PassengerCar::printSpecifications() const {
     else
         cout << "Багажника на крышу нету\n";
 }
+
+PassengerCar::~PassengerCar() {
+    using namespace std;
+
+    cout << "Сработал деструктор класса легковой автомобиль\n";
+}

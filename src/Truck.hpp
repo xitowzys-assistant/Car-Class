@@ -63,6 +63,8 @@ public:
           bool sleepingBag,
           bool preservation,
           bool retractableLegs);
+
+    ~Truck();
 };
 
 #endif /* Truck_hpp */

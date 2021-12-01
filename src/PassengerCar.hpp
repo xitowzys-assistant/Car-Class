@@ -39,6 +39,8 @@ public:
                  bool liftback,
                  bool roofRack);
 
+    ~PassengerCar();
+
     // Напечатать состояние автомобиля
     void printStatusTransport() const override;
 
