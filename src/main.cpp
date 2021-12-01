@@ -13,7 +13,9 @@ int main() {
                                        "Gray",
                                        "бензин, 1.5 л, ГБО",
                                        109,
-                                       2002);
+                                       2002,
+                                       true,
+                                       false);
 
     Truck hino = Truck("Hino Ranger",
                        "White",
@@ -49,7 +51,7 @@ int main() {
     hino.printStatusTransport();
     std::cout << "----------------------------------------\n";
     toyota.stopTransport();
-
+    toyota.openTrunk();
 
     toyota.printStatusTransport();
 

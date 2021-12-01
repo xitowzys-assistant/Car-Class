@@ -20,6 +20,9 @@ private:
     // Багажник на крыше
     bool roofRack = false;
 
+    // Состояние багажника
+    bool statusTruck = false;
+
 public:
     // Открыть багажник
     void openTrunk();
@@ -32,7 +35,15 @@ public:
                  std::string color,
                  std::string engine,
                  unsigned int power,
-                 unsigned short yearRelease);
+                 unsigned short yearRelease,
+                 bool liftback,
+                 bool roofRack);
+
+    // Напечатать состояние автомобиля
+    void printStatusTransport() const override;
+
+    // Напечатать характеристики автомобиля
+    void printSpecifications() const override;
 };
 
 #endif /* PassengerCar_hpp */

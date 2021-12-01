@@ -41,11 +41,9 @@ public:
     // Опустить кузов
     void lowerBody();
 
-    // TODO: проверять есть ли они
     // Выдвинуть опоры
     void extendSupports();
 
-    // TODO: проверять есть ли они
     // Верунуть опоры
     void returnSupports();
 
